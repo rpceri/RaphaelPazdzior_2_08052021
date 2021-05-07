@@ -1,0 +1,184 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    margin:0;
+}
+
+#recherche { padding : 8px }
+
+h1 {
+    font-size:initial;
+}
+
+h2 {
+    font-weight:normal;
+    font-size:small;
+}
+
+#logo {float:left;  width: 40%; padding-left:15px;}
+#logo #img_logo{ width: 50px;}
+
+#inscriptionMobile {float:right; text-align:right; width: 45%; padding-right:15px; }
+#inscriptionMobile ul {  list-style-type: none;    padding: 0;}
+#inscriptionMobile a {
+    text-decoration: none;
+    color: #0065FC;
+    font-weight:bolder;
+}
+
+p#spacer { clear: both; height: 0px; }
+
+
+/*http://jsbin.com/sazefo/1/edit?html,css,output*/
+.crumbs ul {
+    list-style-type: none;
+    padding: 0;
+}
+.crumbs li {
+  display: inline-block;
+}
+
+.crumbs li a {
+    font-weight:bold;
+    height:100%;
+    text-decoration: none;
+}
+.crumbs li a:hover, .crumbs li a:focus {
+    color: #0065FC;
+}
+
+
+#crumbsMobile li {
+    padding: 0;
+    width: 50%;
+    text-align:center;
+    border-bottom: 3px solid grey;
+}
+#crumbsMobile li a {
+    vertical-align: top;
+    line-height:5px;
+}
+#crumbsMobile li:hover, #crumbsMobile li:focus-within {
+    border-bottom: 3px solid #0065FC;
+    color: #0065FC;
+}
+
+
+#crumbsLarge li  { vertical-align:middle;}
+#crumbsLarge li a {padding: 20px; line-height:40px;}
+#crumbsLarge li:hover, #crumbsLarge li:focus-within {
+    border-top: 3px solid #0065FC;
+    color: #0065FC;
+}
+.inscription {
+    color :#0065FC;
+    font-weight: bolder;
+}
+
+@media screen and (min-width: 1024px)
+{ /*sur grand écran*/
+    #inscriptionMobile, #crumbsMobile {display: none;}
+    #titreFiltre{float:left; vertical-align: bottom;  padding-top: 15px; padding-right: 15px } /* "Filtre" est positionné différement */
+    .container {border-radius: 10px;} /* conteneur des plus populaire arrondi */
+}
+
+@media screen and (max-width: 1023px)
+{
+    #crumbsLarge {display: none;}
+}
+
+/* zone de recheche texte (ballon + input + loup */
+.fa-map-marker-alt {
+    color:black;
+    background-color: #e8e8e8;
+    padding: 5px;   
+    border-radius: 10px 0 0 10px;
+}
+#imputRecherche {
+    height: 21px;
+    font-weight: bold;
+    border-color: #e8e8e8;
+    border-style: solid;
+    color:black;
+}
+.fa-search{
+    color:white;
+    background-color: #0065FC;
+    padding: 5px;
+    border-radius: 0 10px 10px 0;
+}
+
+
+#filtres{
+    padding-top : 30px;
+}
+#titreFiltre {
+    font-weight: bold;
+    /*background-color: red;*/
+}
+
+.infoDispo{
+    margin-top: 10px;
+}
+.infoDispo :first-child{
+    float:left;
+    margin-right: 10px;
+}
+
+.fa-info{
+    font-size:0.6em;
+    color:#0065FC;
+    background-color: white;
+    padding: 4px 8px 4px 8px;
+    border-style:solid;
+    border-width: 0.2em;
+    border-radius: 50px;
+    border-color: #e8e8e8;
+}
+
+.container {padding: 5px; background-color:#e8e8e8; max-width: 500px;}
+
+.container .fa-chart-line{ padding-left: 20px;} /* picto fleche montante */
+
+/* arrondi fond blan */
+.container .itemContainer {
+    display: flex;
+    background-color:white;    
+    border-radius: 20px;
+    margin: 20px;
+    padding: 5px;
+}
+
+.container .itemContainer .notation .checked {
+    color: #0065FC;
+}
+
+/* commun a tous les encadrés populaires (image en fond) */
+.container .itemContainer .imgbg {
+    border-radius: 20px 0 0 20px;
+    background-size: 12em;
+    background-repeat: no-repeat;
+    width: 155px;
+}
+/* images propres a chaque encadré populaire */
+.container .itemContainer #imgbg1 { background-image: url("images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg");}
+.container .itemContainer #imgbg2 { background-image: url("images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg");}
+.container .itemContainer #imgbg3 { background-size:6em; background-image: url("images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg");}
+.container .itemContainer .droite {
+    padding-left: 5px;
+}
+
+h3 {padding: 0px; margin: 0px}
+footer {background-color:#e8e8e8; padding :10px}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+footer li  {
+    margin-bottom: 5px;
+}
+footer li a {
+    color: black;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
