@@ -7,6 +7,7 @@
 ## Objet
 
 a partir de 2 copies d'écran, produire une maquette html
+lien direct : https://rpceri.github.io/ocr.reservia.github.io/
 
 ## Observations
 
@@ -20,6 +21,6 @@ Liste des versions : [Cliquer pour afficher](https://github.com/rpceri/ocr.reser
 
 
 ## Auteurs
-Listez le(s) auteur(s) du projet ici !
+
 * **Pazdzior Raphaël** 
 

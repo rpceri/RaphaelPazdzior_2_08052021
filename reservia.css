@@ -135,11 +135,11 @@ p#spacer { clear: both; height: 0px; }
     border-color: #e8e8e8;
 }
 
-.container {padding: 5px; background-color:#e8e8e8; max-width: 500px;}
+.container {padding: 5px; background-color:#e8e8e8; min-width: 300px;} /* max-width: 400px; pas ok en mobile */
 
 .container .fa-chart-line{ padding-left: 20px;} /* picto fleche montante */
 
-/* arrondi fond blan */
+/* arrondi fond blanc */
 .container .itemContainer {
     display: flex;
     background-color:white;    
@@ -148,6 +148,7 @@ p#spacer { clear: both; height: 0px; }
     padding: 5px;
 }
 
+/*.notation {padding-top: 10px;} nok ca agrandi le cadre */
 .container .itemContainer .notation .checked {
     color: #0065FC;
 }
@@ -155,14 +156,14 @@ p#spacer { clear: both; height: 0px; }
 /* commun a tous les encadrés populaires (image en fond) */
 .container .itemContainer .imgbg {
     border-radius: 20px 0 0 20px;
-    background-size: 12em;
+    background-size: 10em;
     background-repeat: no-repeat;
-    width: 155px;
+    width: 105px;
 }
 /* images propres a chaque encadré populaire */
 .container .itemContainer #imgbg1 { background-image: url("images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg");}
 .container .itemContainer #imgbg2 { background-image: url("images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg");}
-.container .itemContainer #imgbg3 { background-size:6em; background-image: url("images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg");}
+.container .itemContainer #imgbg3 { background-size:6.5em; background-image: url("images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg");}
 .container .itemContainer .droite {
     padding-left: 5px;
 }
@@ -181,4 +182,9 @@ footer li a {
     color: black;
     text-decoration: none;
     margin-bottom: 15px;
+}
+
+.lienProduit {
+    text-decoration: none;
+    color: black;
 }
