@@ -135,7 +135,8 @@ p#spacer { clear: both; height: 0px; }
     border-color: #e8e8e8;
 }
 
-.container {padding: 5px; background-color:#e8e8e8; min-width: 300px;} /* max-width: 400px; pas ok en mobile */
+.container {padding: 5px; bmin-width: 300px;} /* max-width: 400px; pas ok en mobile */
+.containerPopulaire {background-color:#e8e8e8;} 
 
 .container .fa-chart-line{ padding-left: 20px;} /* picto fleche montante */
 
