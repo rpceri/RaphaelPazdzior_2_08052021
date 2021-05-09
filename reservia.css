@@ -3,8 +3,6 @@ body {
     margin:0;
 }
 
-#recherche { padding : 8px }
-
 h1 {
     font-size:initial;
 }
@@ -73,18 +71,51 @@ p#spacer { clear: both; height: 0px; }
     color :#0065FC;
     font-weight: bolder;
 }
+#resultats {
+    display: flex;
+    flex-direction: column;
 
-@media screen and (min-width: 1024px)
-{ /*sur grand écran*/
-    #inscriptionMobile, #crumbsMobile {display: none;}
+}
+/*sur grand écran*/
+@media screen and (min-width: 1024px) { 
+    main {padding: 0 30px 0 30px;}
+    #inscriptionMobile, #crumbsMobile {display: none;} /* on cache l'inscription dans la version grand ecran pour al faire apparaitre autrement */
     #titreFiltre{float:left; vertical-align: bottom;  padding-top: 15px; padding-right: 15px } /* "Filtre" est positionné différement */
-    .container {border-radius: 10px;} /* conteneur des plus populaire arrondi */
+    .container {border-radius: 10px;} /* conteneur des plus populaires et des hebergements arrondis */
+    #hebergements .container { background-color:#e8e8e8; margin-right : 30px; height: 100%; }
+
+    #resultats {
+        flex-direction: row;
+        justify-content: center;
+       /* align-items: center;*/
+       /* flex-wrap: wrap;*/
+        /*justify-content: space-around;*/
+        align-content: stretch;
+    }
+    #resultats section:nth-child(1) {
+        order: 2;
+       /* background-color: blue !important;*/
+    }
+    #resultats section:nth-child(2) {
+        order: 1;  
+        /*margin: auto; nok*/
+        /*background-color: yellow;*/
+        flex: 1; /* important pour qu'il prenne tout*/
+     
+    }
+    #resultats section:nth-child(3) {
+        order: 3;
+       /* background-color: red !important;*/
+    }
+
 }
 
-@media screen and (max-width: 1023px)
-{
+
+@media screen and (max-width: 1023px) {
     #crumbsLarge {display: none;}
 }
+
+#recherche { padding : 8px }
 
 /* zone de recheche texte (ballon + input + loup */
 .fa-map-marker-alt {
@@ -94,7 +125,6 @@ p#spacer { clear: both; height: 0px; }
     border-radius: 10px 0 0 10px;
 }
 #imputRecherche {
-    height: 21px;
     font-weight: bold;
     border-color: #e8e8e8;
     border-style: solid;
@@ -135,8 +165,8 @@ p#spacer { clear: both; height: 0px; }
     border-color: #e8e8e8;
 }
 
-.container {padding: 5px; bmin-width: 300px;} /* max-width: 400px; pas ok en mobile */
-.containerPopulaire {background-color:#e8e8e8;} 
+.container {padding: 5px; min-width: 300px;} /* max-width: 400px; pas ok en mobile */
+.containerPopulaire {background-color:#e8e8e8;} /* gris dans les versions petit et grand écran */
 
 .container .fa-chart-line{ padding-left: 20px;} /* picto fleche montante */
 

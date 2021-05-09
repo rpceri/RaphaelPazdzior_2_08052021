@@ -6,7 +6,7 @@ padding-right: 10px;
 margin-top: 10px;
 }
 /* pour personnalisation de chaque picto des checkboxs*/
-.myFilter  i {
+.myFilter span {
     border-radius: 100px;
     color:#0065FC;
     background-color: #DEEBFF;
