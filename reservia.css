@@ -12,61 +12,41 @@ h2 {
     font-size:small;
 }
 
-#logo {float:left;  width: 40%; padding-left:15px;}
-#logo #img_logo{ width: 50px;}
-
-#inscriptionMobile {float:right; text-align:right; width: 45%; padding-right:15px; }
-#inscriptionMobile ul {  list-style-type: none;    padding: 0;}
-#inscriptionMobile a {
-    text-decoration: none;
-    color: #0065FC;
-    font-weight:bolder;
+#logo {
+    width: 40%;
+    background-repeat: no-repeat;
+    background-size:6.5em;
+    background-image: url("images/logo/Reservia@3x.png");
 }
 
-p#spacer { clear: both; height: 0px; }
+/*p#spacer { clear: both; height: 0px; }*/
 
+#conteneurHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around; /*les éléments sont étirés sur tout l'axe, mais ils laissent aussi de l'espace sur les extrémités.*/
+}
 
-/*http://jsbin.com/sazefo/1/edit?html,css,output*/
 .crumbs ul {
     list-style-type: none;
     padding: 0;
 }
 .crumbs li {
   display: inline-block;
+  vertical-align:middle;
 }
 
 .crumbs li a {
     font-weight:bold;
     height:100%;
     text-decoration: none;
+    padding: 20px; line-height:40px;
 }
 .crumbs li a:hover, .crumbs li a:focus {
     color: #0065FC;
 }
 
-
-#crumbsMobile li {
-    padding: 0;
-    width: 50%;
-    text-align:center;
-    border-bottom: 3px solid grey;
-}
-#crumbsMobile li a {
-    vertical-align: top;
-    line-height:5px;
-}
-#crumbsMobile li:hover, #crumbsMobile li:focus-within {
-    border-bottom: 3px solid #0065FC;
-    color: #0065FC;
-}
-
-
-#crumbsLarge li  { vertical-align:middle;}
-#crumbsLarge li a {padding: 20px; line-height:40px;}
-#crumbsLarge li:hover, #crumbsLarge li:focus-within {
-    border-top: 3px solid #0065FC;
-    color: #0065FC;
-}
 .inscription {
     color :#0065FC;
     font-weight: bolder;
@@ -79,12 +59,13 @@ p#spacer { clear: both; height: 0px; }
 /*sur grand écran = desktop */
 @media screen and (min-width: 1024px) { 
     main {padding: 0 30px 0 30px;}
-    #inscriptionMobile, #crumbsMobile {display: none;} /* on cache l'inscription dans la version grand ecran pour al faire apparaitre autrement */
+
     #rech_mobile{display: none;}
     #titreFiltre{float:left; vertical-align: bottom;  padding-top: 15px; padding-right: 15px } /* "Filtre" est positionné différement */
     .container {border-radius: 10px;} /* conteneur des plus populaires et des hebergements arrondis */
-    #hebergements .container { background-color:#e8e8e8; margin-right : 30px; height: 100%; }
+    #hebergements .container { background-color:#e8e8e8; margin-right : 30px; height: 100%; }  /* conteneur de hebergement (pas les autres) en gris*/
 
+    /* changement de l'ordre de ce qu'il y a dans resultats en moe desktop */
     #resultats {
         flex-direction: row;
         justify-content: center;
@@ -108,27 +89,57 @@ p#spacer { clear: both; height: 0px; }
         order: 3;
        /* background-color: red !important;*/
     }
-
+    .crumbs li {
+        border-top: 3px solid white; /* border-top blanc (sur fond blanc) pour éviter saut d'écran au survol ou le border-top est cette fois coloré*/
+    }
+    .crumbs li:hover, .crumbs li:focus-within {
+        border-top: 3px solid #0065FC;
+        color: #0065FC;
+    }
 }
 
 /*sur plus petits écran = mobile */
 @media screen and (max-width: 1023px) {
-    #crumbsLarge {display: none;}
 
+    .liensAncres li { /* seul hebergement et activités*/
+        padding: 0;
+        width: 100%;
+        text-align:center;
+        border-bottom: 3px solid grey;
+    }
+    .liensAncres li a {
+        vertical-align: top;
+        line-height:5px;
+    }
+    .liensAncres li:hover, .liensAncres li:focus-within {
+        border-bottom: 3px solid #0065FC;
+        color: #0065FC;
+    }
+    #conteneurHeader div:nth-child(4) {
+        order: 2;
+    }
+    #conteneurHeader div:nth-child(2) {
+        order: 3;
+        flex: 50%;
+    }
+    #conteneurHeader div:nth-child(3) {
+        order: 4;
+        flex: 50%;
+    }
     #rech_desktop{display: none;}
 }
 
 #recherche { padding : 8px }
 
 #rech_desktop {
-color:white;
-background-color: #0065FC;
-padding: 5px 14px 5px 14px;
-border-radius: 0 10px 10px 0;
-font-weight: bold;
-font-size: 0.8em;
+    color:white;
+    background-color: #0065FC;
+    padding: 5px 14px 5px 14px;
+    border-radius: 0 10px 10px 0;
+    font-weight: bold;
+    font-size: 0.8em;
 }
-/* zone de recheche texte (ballon + input + loup */
+/* zone de recheche texte (ballon + input + loupe) */
 .fa-map-marker-alt {
     color:black;
     background-color: #e8e8e8;
@@ -160,7 +171,7 @@ font-size: 0.8em;
 .infoDispo{
     margin-top: 10px;
 }
-.infoDispo :first-child{
+.infoDispo :first-child{ /* petit picto "i" */
     float:left;
     margin-right: 10px;
 }
@@ -178,8 +189,7 @@ font-size: 0.8em;
 
 .container {padding: 5px; min-width: 300px;} /* max-width: 400px; pas ok en mobile */
 .containerPopulaire {background-color:#e8e8e8;} /* gris dans les versions petit et grand écran */
-
-.container .fa-chart-line{ padding-left: 20px;} /* picto fleche montante */
+.containerPopulaire .fa-chart-line{ padding-left: 20px;} /* picto fleche montante */
 
 /* arrondi fond blanc */
 .container .itemContainer {
@@ -190,7 +200,7 @@ font-size: 0.8em;
     padding: 5px;
 }
 
-/*.notation {padding-top: 10px;} nok ca agrandi le cadre */
+/* activation des étoiles de notation en bleu notation {padding-top: 10px;} nok ca agrandi le cadre */
 .container .itemContainer .notation .checked {
     color: #0065FC;
 }
