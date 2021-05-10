@@ -76,10 +76,11 @@ p#spacer { clear: both; height: 0px; }
     flex-direction: column;
 
 }
-/*sur grand écran*/
+/*sur grand écran = desktop */
 @media screen and (min-width: 1024px) { 
     main {padding: 0 30px 0 30px;}
     #inscriptionMobile, #crumbsMobile {display: none;} /* on cache l'inscription dans la version grand ecran pour al faire apparaitre autrement */
+    #rech_mobile{display: none;}
     #titreFiltre{float:left; vertical-align: bottom;  padding-top: 15px; padding-right: 15px } /* "Filtre" est positionné différement */
     .container {border-radius: 10px;} /* conteneur des plus populaires et des hebergements arrondis */
     #hebergements .container { background-color:#e8e8e8; margin-right : 30px; height: 100%; }
@@ -110,13 +111,23 @@ p#spacer { clear: both; height: 0px; }
 
 }
 
-
+/*sur plus petits écran = mobile */
 @media screen and (max-width: 1023px) {
     #crumbsLarge {display: none;}
+
+    #rech_desktop{display: none;}
 }
 
 #recherche { padding : 8px }
 
+#rech_desktop {
+color:white;
+background-color: #0065FC;
+padding: 5px 14px 5px 14px;
+border-radius: 0 10px 10px 0;
+font-weight: bold;
+font-size: 0.8em;
+}
 /* zone de recheche texte (ballon + input + loup */
 .fa-map-marker-alt {
     color:black;
