@@ -54,18 +54,19 @@ h2 {
 #resultats {
     display: flex;
     flex-direction: column;
-
 }
+
+#activites{ padding-top : 10px;  background-color: orange !important;}
 /*sur grand écran = desktop */
 @media screen and (min-width: 1024px) { 
     main {padding: 0 30px 0 30px;}
 
-    #rech_mobile{display: none;}
+    #rech_mobile{display: none;} /* pour afficher le label "rechercher" et pas le picto*/
     #titreFiltre{float:left; vertical-align: bottom;  padding-top: 15px; padding-right: 15px } /* "Filtre" est positionné différement */
     .container {border-radius: 10px;} /* conteneur des plus populaires et des hebergements arrondis */
     #hebergements .container { background-color:#e8e8e8; margin-right : 30px; height: 100%; }  /* conteneur de hebergement (pas les autres) en gris*/
 
-    /* changement de l'ordre de ce qu'il y a dans resultats en moe desktop */
+    /* changement de l'ordre de ce qu'il y a dans resultats en mode desktop */
     #resultats {
         flex-direction: row;
         justify-content: center;
@@ -74,21 +75,23 @@ h2 {
         /*justify-content: space-around;*/
         align-content: stretch;
     }
-    #resultats section:nth-child(1) {
+    #resultats section:nth-child(1) { /* le splus populaires */
         order: 2;
        /* background-color: blue !important;*/
     }
-    #resultats section:nth-child(2) {
+    #resultats section:nth-child(2) { /* hébergement à marseille*/
         order: 1;  
         /*margin: auto; nok*/
         /*background-color: yellow;*/
         flex: 1; /* important pour qu'il prenne tout*/
-     
     }
-    #resultats section:nth-child(3) {
-        order: 3;
-       /* background-color: red !important;*/
+   
+    #hebergements .produits { /* pour que les produits s'affiches à la suite en mode desktop */
+        display: flex; /* flex-direction: row; par defaut */
+        flex-wrap: wrap;
+        justify-content: space-between; /*les éléments sont séparés avec de l'espace entre eux ;.*/
     }
+
     .crumbs li {
         border-top: 3px solid white; /* border-top blanc (sur fond blanc) pour éviter saut d'écran au survol ou le border-top est cette fois coloré*/
     }
@@ -194,10 +197,12 @@ h2 {
 /* arrondi fond blanc */
 .container .itemContainer {
     display: flex;
-    background-color:white;    
+    background-color:white;
     border-radius: 20px;
     margin: 20px;
     padding: 5px;
+    max-width: 340px; /* a voir */
+    min-width: 220px;
 }
 
 /* activation des étoiles de notation en bleu notation {padding-top: 10px;} nok ca agrandi le cadre */
@@ -209,6 +214,7 @@ h2 {
 .container .itemContainer .imgbg {
     border-radius: 20px 0 0 20px;
     background-size: 10em;
+    background-position: center;
     background-repeat: no-repeat;
     width: 105px;
 }
@@ -219,6 +225,33 @@ h2 {
 .container .itemContainer .droite {
     padding-left: 5px;
 }
+/*  encadré hébergement : la photo est en haut au lieu de'a gauche => changement d direction du flex*/
+#hebergements .itemContainer {
+    flex-direction: column;
+
+}
+#hebergements .container .itemContainer .imgbg {
+    border-radius: 20px 20px 0 0;
+    background-size: 13.7em;
+    width: 100%;
+    height: 100px;
+}
+#hebergements .container .produits .droite {
+    margin-top: px;
+}
+
+#hebergements .container .produits .droite p {
+    /*background-color:red;*/
+    margin: 0px;
+}
+
+/* images propres a chaque encadré hébergement */
+.container .itemContainer #Hebimgbg1 { background-image: url("images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg");}
+.container .itemContainer #Hebimgbg2 {/*background-size:0.5em;*/ background-image: url("images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg");}
+.container .itemContainer #Hebimgbg3 { background-image: url("images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg");}
+.container .itemContainer #Hebimgbg4 { background-image: url("images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg");}
+.container .itemContainer #Hebimgbg5 { background-image: url("images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg");}
+.container .itemContainer #Hebimgbg6 { background-image: url("images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg");}
 
 h3 {padding: 0px; margin: 0px}
 footer {background-color:#e8e8e8; padding :10px}
