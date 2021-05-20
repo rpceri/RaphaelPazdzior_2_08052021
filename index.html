@@ -55,8 +55,14 @@
     <h1>Trouvez votre hebergement pour des vacances de rêves</h1>
     <h2>En plein centre ville ou en pleine nature</h2>
 
-    <!--champ de recherche style="display: flex;" pour que tout saligne parfaitement horizontalement-->
-    <div style="display: flex;"><span class="fas fa-map-marker-alt">&nbsp;</span><input type="text" id="imputRecherche" placeholder="Marseille, France" /><span class="fas fa-search" id="rech_mobile">&nbsp;</span><span id="rech_desktop">Rechercher</span></div>
+    <!--champ de recherche style="display: flex;" pour que tout s'aligne parfaitement horizontalement-->
+    <div id="conteneurRecherche">
+        <span class="fas fa-map-marker-alt">&nbsp;</span><input type="text" id="imputRecherche" placeholder="Marseille, France" />
+        <span class="fas fa-search" id="rech_mobile">&nbsp;</span>    
+        <input type="submit" id="rech_desktop" value="Rechercher" />
+        <!--<span class="fas fa-search" id="rech_mobile">&nbsp;</span>
+        <span id="rech_desktop">Rechercher</span>-->
+    </div>
     <div id="filtres">
         <div id="titreFiltre">Filtres</div>
 
@@ -95,11 +101,9 @@
    <section id="populaires">
   
        <div class="container containerPopulaire">
-           <div style="display: flex; padding-top: 15px;">
-               <div>
-                   <strong>Les plus populaires</strong>
-               </div>
-               <div style="text-align: right; flex:1">
+           <div id="headerPopulaire">
+               <h1>Les plus populaires</h1>
+               <div id="pictoPop">
                    <span class="fas fa-chart-line">&nbsp;</span>
                </div>
             </div>
@@ -161,9 +165,7 @@
    <!-- Section hébergements -->
    <section id="hebergements">
         <div class="container">
-            <p>
-                <strong>Hébergements à Marseille</strong>
-            </p>
+            <h1>Hébergements à Marseille</h1>
             <div class="produits">
                 <a href="#" class="lienProduit">
                     <div class="itemContainer">
@@ -277,9 +279,7 @@
    <!-- Section activites -->
    <section id="activites">
     <div class="container">
-        <p>
-            <strong>Activités à Marseille</strong>
-        </p>
+        <h1>Activités à Marseille</h1>
         <div class="produits">
             <a href="#" class="lienProduit">
                 <div class="itemContainer vignetteHaute">

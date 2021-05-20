@@ -1,10 +1,12 @@
 .myFilter {
-border: 2px lightgrey solid;
-border-radius: 100px;
-display: inline-block;
-padding-right: 10px;
-margin-top: 10px;
+  border: 2px lightgrey solid;
+  border-radius: 100px;
+  display: inline-block;
+  padding-right: 10px;
+  margin-top: 10px;
+  font-weight: bold;
 }
+
 /* pour personnalisation de chaque picto des checkboxs*/
 .myFilter span {
     border-radius: 100px;
@@ -12,13 +14,17 @@ margin-top: 10px;
     background-color: #DEEBFF;
     padding: 5px;
 }
+
 input[type="checkbox"].checkboxFiltres {
     display: none;
-  }
+}
 
-  /*la pseudo-classe :checked permet de distinguer le <label> en fonction de l’état de l’élément <input>.*/
-  input[type="checkbox"].checkboxFiltres:checked + label {
-    /*background-color: #00B7E8 ;*/
-    font-weight: bold;
+ /*la pseudo-classe :checked permet de distinguer le <label> en fonction de l’état de l’élément <input>.*/
+ input[type="checkbox"].checkboxFiltres:checked + label {
+    color:#0065FC;
     font-style: italic;
-  }
+}
+
+input[type="checkbox"].checkboxFiltres:hover + label {
+    color:#0065FC;
+}
